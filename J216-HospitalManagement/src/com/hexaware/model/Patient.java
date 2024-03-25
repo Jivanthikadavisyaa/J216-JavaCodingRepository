@@ -73,4 +73,16 @@ public class Patient {
 	public void setAddress(String address) {
 		this.address = address;
 	}
+
+
+	public String toString() {
+		return("Patient:"
+				+ "\nPatient Id:"+patientId
+				+"\nFirst name:"+firstName
+				+"\nLast name:"+lastName
+				+"\nDate of Birth: "+dateOfBirth
+				+"\nGender: "+gender
+				+"\nContact number: "+contactNumber
+				+"\nAddress: "+ address);
+	}
 }
