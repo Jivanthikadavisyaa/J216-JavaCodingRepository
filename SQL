@@ -1,0 +1,44 @@
+create database hospitalmanagement;
+use hospitalmanagement;
+drop database hospitalmanagement;
+create table patient (
+    patientid int primary key,
+    firstname varchar(20),
+    lastname varchar(20),
+    dateofbirth date,
+    gender varchar(20),
+    contact int,
+    address varchar(20)
+);
+
+insert into patient (patientid, firstname, lastname, dateofbirth, gender, contact,address)
+values
+    (11, 'Akash', 'Jay', '2003-09-08', 'Male', 9876547,'Chennai'),
+    (12, 'Priya', 'V', '2002-07-05', 'Female', 9987568,'Chennai'),
+    (13, 'Divya', 'L', '2001-05-12', 'Female', 9988968,'Chennai'),
+    (14, 'Aravind', 'T', '2003-06-26', 'Male', 9633562,'Chennai'),
+    (15, 'Canny', 'Melvin', '1987-04-30', 'Female', 9987568,'Chennai');
+select * from patient;
+
+create table doctors(doctorid int primary key, firstname varchar(20), lastname varchar(20),
+ specialization varchar(20),contactnumber int);
+insert into doctors (doctorId, firstName, lastName, specialization, contactNumber)
+values
+    (1, 'John', 'D', 'Cardiologist', '1234560'),
+    (2, 'Alice', 'S', 'Pediatrician', '456723'),
+    (3, 'Bob', 'P', 'Dermatologist', '7823456'),
+    (4, 'Elly', 'B', 'Orthopedic Surgeon', '0145789'),
+    (5, 'Charlie', 'W', 'Neurologist', '34569012');
+select * from doctors;
+
+ create table appointments(appointmentid int, patientid int, doctorid int,
+ appdate date, patdes varchar(20) , foreign key(patientid) references patient(patientid), foreign key
+ (doctorid) references doctors(doctorid));
+insert into appointments (appointmentId, patientId, doctorId, appDate, patdes)
+values
+    (21, 11, 1, '2024-03-25', 'Regular checkup'),
+    (22, 12, 2, '2024-03-26', 'Dental checkup'),
+    (23, 13, 3, '2024-03-27', 'Eye checkup'),
+    (24, 14, 4, '2024-03-28', 'General checkup'),
+    (25, 15, 5, '2024-03-29', 'Vaccination');
+select * from appointments;
