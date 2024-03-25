@@ -57,5 +57,13 @@ public class Appointments {
 		this.description = description;
 	}
 
+	public String toString() {
+		return("Appointment:"
+				+ "\nAppointment Id: "+ appointmentId
+				+ "\nPatient Id: " + patientId
+				+ "\nAppointment date: " + appointmentDate
+				+ "\nDescription: "+description);
+	}
+
 
 }
