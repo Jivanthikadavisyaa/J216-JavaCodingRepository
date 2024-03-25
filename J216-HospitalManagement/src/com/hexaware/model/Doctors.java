@@ -61,4 +61,13 @@ public class Doctors {
 		this.contactNumber = contactNumber;
 	}
 
+	 public String toString() {
+	    	return ("Doctor:"
+	    			+ "\nDoctor Id: "+doctorId
+	    			+ "\nFirst name: "+firstName
+	    			+ "\nLast name: "+lastName
+	    			+ "\nSpecialization: "+specialization
+	    			+ "\nContact number: "+contactNumber);
+	    }
+
 }
